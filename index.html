@@ -5,31 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Paper, Scissors, Rock Game by the Asian Persuasion</title>
+    <title>Paper, Rock, Scissors Game by the Asian Persuasion</title>
 
     <!--Bootstrap-->
     <!-- Core CSS theme-->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
-
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
     <!--  Firebase URL for projects-->
     <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+    <!-- link to assets, javascript, css-->
     <link rel="stylesheet" type="text/css" href="assets/design.css">
+    <script src="assets/gameCode.js"></script>
 
 </head>
 
 <body>
-
     <!-- container to house the entire application-->
     <div class="container-fluid text-center">
         <!--header "paper, scissors, rock" w/ login-->
@@ -43,14 +40,14 @@
                     <div class="input-group">
                         <input type="text" class="form-control" id="playerName" placeholder="Hey, there. How you doin'? What's your name?">
                         <span class="input-group-btn">
-                            <button class="btn btn-default" id="login" type="submit">Enter the Thunderdome</button>
+                            <button class="btn btn-rounded" id="login" type="submit">Enter the Thunderdome</button>
                         </span>
                     </div>
                 </form>
             </div>
-            <div class="credentials col-sm-12">
-                <h2>Howdy, <span id="player-name-display"></span>
-                    ! You're player <span id="player-number"></span>!
+            <div class="credentials col-sm-12 text-center">
+                <h2>Howdy, <span id="showPlayerName"></span>
+                    ! You're player <span id="playerNumber"></span>!
                 </h2>
             </div>
             <div class="col-sm-12 pending-login">
@@ -59,75 +56,88 @@
         </div>
     </div>
 
-    <!-- row for player one-->
+
     <div class="container-fluid">
         <div class="row">
-            <div class="span-3">
-                <div class=" player col-sm-4 text-center">
-                    <h3 id="player-1">Waiting for Player 1</h3>
-                    <p class="stats p1-stats">
-                        <strong>Wins:</strong>
-                        <span id="marioWins">0</span>
-                        |
-                        <strong>Losses:</strong>
-                        <span id="marioLosses">0</span>
-                    </p>
-                    <p class="choices p1-choices">
-                        <button id="paper" data-player="1" class="btn btn-default selection">Paper</button>
-                        <button id="scissors" data-player="1" class="btn btn-default selection">Scissors</button>
-                        <button id="rock" data-player="1" class="btn btn-default selection">Rock</button>
-                    </p>
-                    <p class="pending-selection p1-pending-selection">
-                        Pending decision
-                    </p>
-                    <p class="selection-made p1-selection-made">
-                        Decision Made.
-                    </p>
-                    <p class="selection-reveal p1-selection-reveal">
-                    </p>
-                </div>
+            <div class="col-md-4 col-md-offset-2 col-sm-6 margin-top">
+                <ul>
+                    <!-- row for player one-->
+                    <li class="player text-center">
+                        <h3 id="playerOne">Awaiting first Player </h3>
+                        <p class="stats playerOneStats">
+                            <em>Wins:</em>
+                            <span id="marioWins">0</span>
+                            |
+                            <em>Losses:</em>
+                            <span id="marioLosses">0</span>
+                        </p>
+                        <p class="choices playerOneChoices">
+                            <button id="paper" databasePlayer="1" class="btn btn-rounded selection">Paper</button>
+                            <button id="scissors" databasePlayer="1" class="btn btn-rounded selection">Scissors</button>
+                            <button id="rock" databasePlayer="1" class="btn btn-rounded selection">Rock</button>
+                        </p>
+                        <p class="pendingChoice p1-pendingChoice">
+                            Thinking...
+                        </p>
+                        <p class="choiseDecided p1-choiseDecided">
+                            The hand is thrown.
+                        </p>
+                        <p class="revealChoice p1-revealChoice">
+                        </p>
+                    </li>
+
+                    <li>
+                        <h6 id="gameResult" class="text-center">
+                            Result:
+                        </h6>
+                    </li>
+
+                    <!-- row for player 2 -->
+                    <li class="player text-center">
+                        <h3 id="playerTwo">Awaiting second player</h3>
+                        <p class="stats playerTwoStats">
+                            <em>Wins:</em>
+                            <span id="luigiWins">0</span>
+                            |
+                            <em>Losses:</em>
+                            <span id="luigiLosses">0</span>
+                        </p>
+                        <p class="choices playerTwoChoices">
+                            <button id="paper" databasePlayer="2" class="btn btn-rounded selection">Paper</button>
+                            <button id="scissors" databasePlayer="2" class="btn btn-rounded selection">Scissors</button>
+                            <button id="rock" databasePlayer="2" class="btn btn-rounded selection">Rock</button>
+                        </p>
+                        <p class="pendingChoice p2-pendingChoice">
+                            Thinking...
+                        </p>
+                        <p class="choiseDecided p2-choiseDecided">
+                            The hand is thrown.
+                        </p>
+                        <p class="revealChoice p2-revealChoice">
+                        </p>
+                    </li>
+                </ul>
             </div>
 
             <!-- chat box-->
-            <div class="span-4" id="chatBox">
-                <div class="chatHeader">
-                    <h4 class="chatBoxTitle text-center">This isn't tinder so chat away!</h4>
-                </div>
-                <form role="chatFeature" class="chatFooter">
-                    <div class="input-group">
-                        <input type="text" class="form-control" id="chat">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" id="send-chat" type="submit">Submit</button>
-                        </span>
+            <div id="chatBox" class="col-md-4 col-md-offset-2 col-sm-6" >
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title text-center">
+                            This isn't Tinder so chat away!
+                        </h3>
                     </div>
-                </form>
-            </div>
-        </div>
+                    <ul id="chatLog" class="list-unstyled text-left"></ul>
+                    <form role="chat" class="panel-footer">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="chat">
+                            <span class="input-group-btn">
+                                <button class="btn btn-rounded" id="send-chat" type="submit">Submit</button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
 
-        <!-- row for player 2 -->
-        <div class="row">
-            <div class="player col-sm-4 text-center">
-                <h3 id="player-2">Waiting for Player 2</h3>
-                <p class="stats p2-stats">
-                    <strong>Wins:</strong>
-                    <span id="luigiWins">0</span>
-                    |
-                    <strong>Losses:</strong>
-                    <span id="luigiLosses">0</span>
-                </p>
-                <p class="choices p2-choices">
-                    <button id="paper" data-player="1" class="btn btn-default selection">Paper</button>
-                    <button id="scissors" data-player="1" class="btn btn-default selection">Scissors</button>
-                    <button id="rock" data-player="1" class="btn btn-default selection">Rock</button>
-                </p>
-                <p class="pending-selection p2-pending-selection">
-                    Pending decision
-                </p>
-                <p class="selection-made p2-selection-made">
-                    Decision Made.
-                </p>
-                <p class="selection-reveal p2-selection-reveal">
-                </p>
             </div>
         </div>
 

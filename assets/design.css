@@ -11,10 +11,21 @@ body{
     padding: 35px;
 }
 
+ul{
+    list-style-type: none;
+}
+
 .player{
     border: 2px solid aliceblue;
 }
 
 #chatBox{
-    border: 100px solid black;
+    margin: 10px;
+    border: 2px solid aliceblue;
+    padding: 10px;
+}
+#chatLog
+
+.chatHeader{
+    color: rgb(72, 65, 65)
 }
