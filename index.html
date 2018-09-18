@@ -34,7 +34,7 @@
             <h1>Paper | Rock | Scissors</h1>
         </div>
         <div class="row">
-            <div class="col-sm-12 text-center preGame">
+            <div class="col-sm-12 text-center waitingRoom">
                 <!-- creat the bootstrap form for player login-->
                 <form role="login">
                     <div class="input-group">
@@ -50,7 +50,7 @@
                     ! You're player <span id="playerNumber"></span>!
                 </h2>
             </div>
-            <div class="col-sm-12 pending-login">
+            <div class="col-sm-12 roomFull">
                 The arena is full. There will be space when one leaves the Thunderdome.
             </div>
         </div>
@@ -76,13 +76,13 @@
                             <button id="scissors" databasePlayer="1" class="btn btn-rounded selection">Scissors</button>
                             <button id="rock" databasePlayer="1" class="btn btn-rounded selection">Rock</button>
                         </p>
-                        <p class="pendingChoice p1-pendingChoice">
+                        <p class="pendingChoice marioPendingChoice">
                             Thinking...
                         </p>
-                        <p class="choiseDecided p1-choiseDecided">
+                        <p class="choiseDecided marioChoiseDecided">
                             The hand is thrown.
                         </p>
-                        <p class="revealChoice p1-revealChoice">
+                        <p class="revealChoice playerOneShowChoice">
                         </p>
                     </li>
 
@@ -107,13 +107,13 @@
                             <button id="scissors" databasePlayer="2" class="btn btn-rounded selection">Scissors</button>
                             <button id="rock" databasePlayer="2" class="btn btn-rounded selection">Rock</button>
                         </p>
-                        <p class="pendingChoice p2-pendingChoice">
+                        <p class="pendingChoice luigiPendingChoice">
                             Thinking...
                         </p>
-                        <p class="choiseDecided p2-choiseDecided">
+                        <p class="choiseDecided luigiChoiseDecided">
                             The hand is thrown.
                         </p>
-                        <p class="revealChoice p2-revealChoice">
+                        <p class="revealChoice ">
                         </p>
                     </li>
                 </ul>
@@ -127,7 +127,7 @@
                             This isn't Tinder so chat away!
                         </h3>
                     </div>
-                    <ul id="chatLog" class="list-unstyled text-left"></ul>
+                    <ul id="chatLog" class="list-unstyled text-center"></ul>
                     <form role="chat" class="panel-footer">
                         <div class="input-group">
                             <input type="text" class="form-control" id="chat">
