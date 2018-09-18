@@ -1,5 +1,5 @@
 $(function () {
-    //initialize firebase
+    //initialize firebase/ hide API key
     var config = {
         apiKey: "AIzaSyCXJ6259qG8CJXHldibJSwcuR59TqiBKyg",
         authDomain: "laurence-ut-coding-ttr.firebaseapp.com",

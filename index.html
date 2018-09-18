@@ -30,15 +30,18 @@
 
 <body>
 
+    <!-- container to house the entire application-->
     <div class="container-fluid text-center">
+        <!--header "paper, scissors, rock" w/ login-->
         <div class="jumbotron">
-            <h1>Paper, Scissors, Rock</h1>
+            <h1>Paper | Rock | Scissors</h1>
         </div>
         <div class="row">
             <div class="col-sm-12 text-center preGame">
+                <!-- creat the bootstrap form for player login-->
                 <form role="login">
                     <div class="input-group">
-                        <input type="text" class="form-control" id="player-name" placeholder="Hey, there. How you doin'? What's your name?">
+                        <input type="text" class="form-control" id="playerName" placeholder="Hey, there. How you doin'? What's your name?">
                         <span class="input-group-btn">
                             <button class="btn btn-default" id="login" type="submit">Enter the Thunderdome</button>
                         </span>
@@ -54,44 +57,67 @@
                 The arena is full. There will be space when one leaves the Thunderdome.
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-4 player">
-                <h3 id="player-1">Waiting for Player 1</h3>
-                <p class="stats p1-stats">
-                    <strong>Wins:</strong>
-                    <span id="marioWins">0</span>
-                    <strong>Losses:</strong>
-                    <span id="marioLosses"></span>
-                </p>
-                <p class="choices p1-choices">
-                    <button id="paper" data-player="1" class="btn btn-default selection">Paper</button>
-                    <button id="Scissors" data-player="1" class="btn btn-default selection">Scissors</button>
-                    <button id="rock" data-player="1" class="btn btn-default selection">Rock</button>
-                </p>
-                <p class="pending-selection p1-pending-selection">
-                    Pending decision
-                </p>
-                <p class="selection-made p1-selection-made">
-                    Decision Made.
-                </p>
-                <p class="selection-reveal p1-selection-reveal">
+    </div>
 
-                </p>
+    <!-- row for player one-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="span-3">
+                <div class=" player col-sm-4 text-center">
+                    <h3 id="player-1">Waiting for Player 1</h3>
+                    <p class="stats p1-stats">
+                        <strong>Wins:</strong>
+                        <span id="marioWins">0</span>
+                        |
+                        <strong>Losses:</strong>
+                        <span id="marioLosses">0</span>
+                    </p>
+                    <p class="choices p1-choices">
+                        <button id="paper" data-player="1" class="btn btn-default selection">Paper</button>
+                        <button id="scissors" data-player="1" class="btn btn-default selection">Scissors</button>
+                        <button id="rock" data-player="1" class="btn btn-default selection">Rock</button>
+                    </p>
+                    <p class="pending-selection p1-pending-selection">
+                        Pending decision
+                    </p>
+                    <p class="selection-made p1-selection-made">
+                        Decision Made.
+                    </p>
+                    <p class="selection-reveal p1-selection-reveal">
+                    </p>
+                </div>
             </div>
-            <div class="col-sm-4">
-                <h3 id="feedback"></h3>
+
+            <!-- chat box-->
+            <div class="span-4" id="chatBox">
+                <div class="chatHeader">
+                    <h4 class="chatBoxTitle text-center">This isn't tinder so chat away!</h4>
+                </div>
+                <form role="chatFeature" class="chatFooter">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="chat">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" id="send-chat" type="submit">Submit</button>
+                        </span>
+                    </div>
+                </form>
             </div>
-            <div class="col-sm-4 player">
+        </div>
+
+        <!-- row for player 2 -->
+        <div class="row">
+            <div class="player col-sm-4 text-center">
                 <h3 id="player-2">Waiting for Player 2</h3>
                 <p class="stats p2-stats">
                     <strong>Wins:</strong>
                     <span id="luigiWins">0</span>
+                    |
                     <strong>Losses:</strong>
-                    <span id="luigiLosses"></span>
+                    <span id="luigiLosses">0</span>
                 </p>
                 <p class="choices p2-choices">
                     <button id="paper" data-player="1" class="btn btn-default selection">Paper</button>
-                    <button id="Scissors" data-player="1" class="btn btn-default selection">Scissors</button>
+                    <button id="scissors" data-player="1" class="btn btn-default selection">Scissors</button>
                     <button id="rock" data-player="1" class="btn btn-default selection">Rock</button>
                 </p>
                 <p class="pending-selection p2-pending-selection">
@@ -101,31 +127,12 @@
                     Decision Made.
                 </p>
                 <p class="selection-reveal p2-selection-reveal">
-
                 </p>
             </div>
         </div>
-        <div class="row post-login">
-            <div class="col-sm-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title text-left">Chat</h3>
-                    </div>
-                    <ul id="chat-log" class="list-unstyled text-left">
 
-                    </ul>
-                    <form role="chat" class="panel-footer">
-                        <div class="input-group">
-                            <input type="text" class="form-control" id="chat">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" id="send-chat" type="submit">Send</button>
-                            </span>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
     </div>
+
 
 </body>
 
