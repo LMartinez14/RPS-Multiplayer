@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $(function () {
     //initialize firebase/ hide API key
     var config = {
@@ -12,4 +13,6 @@ $(function () {
 
     
 });
+=======
+>>>>>>> 0f4c4d5b160061afd0b607a241dcebdcfd14e708
 
